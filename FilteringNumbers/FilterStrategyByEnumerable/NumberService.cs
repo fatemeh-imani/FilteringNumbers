@@ -29,9 +29,9 @@ namespace FilteringNumbers.FilterStrategyByEnumerable
         }
 
         // کلاس استاتیک برای فیلتر کردن اعداد
-        public static IEnumerable<int> FilterNumbers(IEnumerable<int> numbers, Func<int, bool> filter)
+        public static IEnumerable<int> FilterNumbers(IEnumerable<int> numbers, IFilter  filter)
         {
-          return  numbers.Where(filter).ToList();
+          return  numbers.Where(n => filter.IsMatch(n)).ToList();
         }
 
        public static void PrintNumbers(IEnumerable<int> numbers)

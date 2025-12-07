@@ -5,14 +5,14 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FilteringNumbers
+namespace FilteringNumbers.FilterStrategyByEnumerable
 {
     public static class NumberService
     {
         
-        public static List<int> ReadNumbersFromUser()
+        public static IEnumerable<int> ReadNumbersFromUser()
         {
-            List<int> numbers = new List<int>();
+            List<int> numbers = new List<int>();  // برای افزودن اعداد
             ConsoleUserIO.Write(Messages.EnterNumbers);
             
             while (true)
@@ -29,13 +29,14 @@ namespace FilteringNumbers
         }
 
         // کلاس استاتیک برای فیلتر کردن اعداد
-        public static List<int> FilterNumbers(List<int> numbers)
+        public static IEnumerable<int> FilterNumbers(IEnumerable<int> numbers)
         {
           return  numbers.Where(n => n > 5).ToList();
         }
 
-       public static void PrintNumbers(List<int> numbers)
+       public static void PrintNumbers(IEnumerable<int> numbers)
         {
+            ConsoleUserIO.Write("=== Printing numbers from Enumerable ===");
             ConsoleUserIO.Write(Messages.Result);
 
              foreach (int n in numbers)

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FilteringNumbers
+namespace FilteringNumbers.FilterStrategyByOverloading
 {
     public interface IUserIO
     {

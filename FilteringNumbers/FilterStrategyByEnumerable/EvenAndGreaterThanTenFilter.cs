@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace FilteringNumbers.FilterStrategyByEnumerable
 {
-    public class EvenAndGreaterThanTenFilter : IFilter
+    public class EvenAndGreaterThanTenFilter
     {
-        public bool IsMatch(int number)
+        public static bool IsMatch(int number)
         {
             return number % 2 == 0 && number > 10;
         }

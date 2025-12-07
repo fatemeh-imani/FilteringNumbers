@@ -2,6 +2,5 @@
 
 
 var numbers = NumberService.ReadNumbersFromUser();
-var filter = new EvenAndGreaterThanTenFilter();
-var filtered = NumberService.FilterNumbers(numbers,filter);
+var filtered = NumberService.FilterNumbers(numbers,EvenAndGreaterThanTenFilter.IsMatch);
 NumberService.PrintNumbers(filtered);

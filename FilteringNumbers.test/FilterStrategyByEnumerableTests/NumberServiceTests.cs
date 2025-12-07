@@ -13,10 +13,9 @@ namespace FilteringNumbers.test.FilterStrategyByEnumerableTests
         {
             //Arrange
              var numbers = new List<int> { 5,12,8,15,20 };
-            var filter = new EvenAndGreaterThanTenFilter();
 
             //Act
-            var result = NumberService.FilterNumbers(numbers, filter);
+            var result = NumberService.FilterNumbers(numbers, n => n % 2 == 0 && n > 10);
 
             //Assert
             Assert.Equal(new List<int> { 12, 20 }, result);

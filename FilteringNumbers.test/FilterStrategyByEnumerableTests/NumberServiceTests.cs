@@ -1,24 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xunit;
-using FilteringNumbers;
+using FilteringNumbers.FilterStrategyByEnumerable;
 
 
-namespace FilteringNumbers.test
+namespace FilteringNumbers.test.FilterStrategyByEnumerableTests
 {
     public class NumberServiceTests 
     {
         [Fact]
-        public void FilterNumbers_ShouldReturnOnlyNumbersGreaterThanFive()
+        public void FilterNumbers_ShouldReturnOnlyNumbersFiltering()
         {
             //Arrange
-             var numbers = new List<int> { 2,5,6,10,3 };
+             var numbers = new List<int> { 5,12,8,15,20 };
+            var filter = new EvenAndGreaterThanTenFilter();
 
             //Act
-            var result = NumberService.FilterNumbers(numbers);
+            var result = NumberService.FilterNumbers(numbers, filter);
 
             //Assert
-            Assert.Equal(new List<int> { 6, 10 }, result);
+            Assert.Equal(new List<int> { 12, 20 }, result);
 
         }
        

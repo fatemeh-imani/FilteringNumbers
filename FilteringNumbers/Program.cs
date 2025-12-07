@@ -1,6 +1,7 @@
-﻿using FilteringNumbers;
+﻿using FilteringNumbers.FilterStrategyByEnumerable;
 
 
 var numbers = NumberService.ReadNumbersFromUser();
-var filtered = NumberService.FilterNumbers(numbers);
+var filter = new EvenAndGreaterThanTenFilter();
+var filtered = NumberService.FilterNumbers(numbers,filter);
 NumberService.PrintNumbers(filtered);

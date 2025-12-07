@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NumbersFilterApp
+namespace FilteringNumbers
 {
     public static class ConsoleUserIO
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NumbersFilterApp.tests
+namespace FilteringNumbers.test
 {
     // کلاس شبیه‌ساز I/O برای Unit Test
     public class FakeConsoleUserIO :IUserIO

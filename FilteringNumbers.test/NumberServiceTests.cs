@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xunit;
-using NumbersFilterApp;
+using FilteringNumbers;
 
 
-namespace NumbersFilterApp.tests
+namespace FilteringNumbers.test
 {
     public class NumberServiceTests 
     {

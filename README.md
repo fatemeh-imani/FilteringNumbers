@@ -1,3 +1,6 @@
+
+<div dir="rtl">
+
 🚀 FilteringNumbers – A Clean & Testable Filtering System
 
 A small but powerful project demonstrating:
@@ -123,3 +126,5 @@ User → enters "5", "12", "hello", "20", "done"
 Parser → identifies int/double/string
 Filter → removes items <= 10
 Output  → 12, 20, "hello"
+
+</div>

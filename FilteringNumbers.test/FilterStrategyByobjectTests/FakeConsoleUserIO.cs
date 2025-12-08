@@ -1,14 +1,14 @@
-﻿using FilteringNumbers.FilterStrategyByEnumerable;
+﻿using FilteringNumbers.FilterStrategyByobject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FilteringNumbers.test.FilterStrategyByEnumerableTests
+namespace FilteringNumbers.tests.FilterStrategyByobjectTests
 {
     // کلاس شبیه‌ساز I/O برای Unit Test
-    public class FakeConsoleUserIO :IUserIO
+    public class FakeConsoleUserIO : IUserIO
     {
         private Queue<string> _inputs;
         public List<string> outputs { get; private set; } = new List<string>();

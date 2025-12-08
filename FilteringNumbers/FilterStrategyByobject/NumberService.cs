@@ -12,31 +12,33 @@ namespace FilteringNumbers.FilterStrategyByobject
 
         public static IEnumerable<object> ReadItemsFromUser()
         {
-            List<object> items = new List<object>();  // برای افزودن اعداد
-            ConsoleUserIO.Write(Messages.EnterNumbers);
+            ConsoleUserIO.Write(Messages.EnterItems);
 
             while (true)
             {
                 string input = ConsoleUserIO.Read();
-                if (input.ToLower() == "done") break;
+                if (input.ToLower() == "done") yield break;
 
                 if (int.TryParse(input, out int n))
-                    items.Add(n);
+                    yield return n;
 
                 else if (double.TryParse(input, out double d))
-                    items.Add(d);
+                    yield return d;
 
                 else
-                    items.Add(input); // string
+                    yield return input;
             }
-            return items;
+            
         }
 
         // کلاس استاتیک برای فیلتر کردن اعداد
 
         public static IEnumerable<object> FilterObjects(IEnumerable<object> items, Func<object, bool> filter)
         {
-            return items.Where(filter).ToList();
+            foreach (object item in items)
+            {
+                if(filter(item)) yield return item;
+            }
         }
 
         public static void PrintItems(IEnumerable<object> items)
@@ -51,10 +53,6 @@ namespace FilteringNumbers.FilterStrategyByobject
                 else
                     ConsoleUserIO.Write(item.ToString());
             }
-
-
-
-
         }
 
     }

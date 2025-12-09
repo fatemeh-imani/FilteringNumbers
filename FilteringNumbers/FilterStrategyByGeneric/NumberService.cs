@@ -32,7 +32,7 @@ namespace FilteringNumbers.FilterStrategyByGeneric
 
       
         // کلاس استاتیک برای فیلتر کردن اعداد
-        public static IEnumerable<T> FilterObjects<T>(IEnumerable<T> items, Func<T, bool> filter)
+        public static IEnumerable<T> FilterObjects<T>(this IEnumerable<T> items, Func<T, bool> filter)
         {
             foreach (var item in items)
                 if (filter(item))
@@ -40,7 +40,7 @@ namespace FilteringNumbers.FilterStrategyByGeneric
         }
 
        
-        public static void PrintItems<T>(IEnumerable<T> items)
+        public static void PrintItems<T>(this IEnumerable<T> items)
         {
             
             ConsoleUserIO.Write(Messages.Result);

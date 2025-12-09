@@ -33,7 +33,7 @@ namespace FilteringNumbers.FilterStrategyByobject
 
         // کلاس استاتیک برای فیلتر کردن اعداد
 
-        public static IEnumerable<object> FilterObjects(IEnumerable<object> items, Func<object, bool> filter)
+        public static IEnumerable<object> FilterObjects(this IEnumerable<object> items, Func<object, bool> filter)
         {
             foreach (object item in items)
             {
@@ -41,7 +41,7 @@ namespace FilteringNumbers.FilterStrategyByobject
             }
         }
 
-        public static void PrintItems(IEnumerable<object> items)
+        public static void PrintItems(this IEnumerable<object> items)
         {
 
             ConsoleUserIO.Write(Messages.Result);

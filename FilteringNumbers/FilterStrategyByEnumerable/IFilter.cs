@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FilteringNumbers
+namespace FilteringNumbers.FilterStrategyByEnumerable
 {
-    public interface IUserIO
+    public interface IFilter
     {
-        string Read();
-        void Write(string message);
+        bool IsMatch(int number);
     }
 }

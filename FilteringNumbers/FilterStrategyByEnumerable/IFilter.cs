@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FilteringNumbers.FilterStrategyByEnumerable
 {
-    public interface IFilter
+    public interface IFilter<T>
     {
-        bool IsMatch(int number);
+        bool IsMatch(T number);
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FilteringNumbers.FilterStrategyByEnumerable
 {
-    public class EvenAndGreaterThanTenFilter:IFilter
+    public class EvenAndGreaterThanTenFilter:IFilter<int>
     {
         public  bool IsMatch(int number)
         {

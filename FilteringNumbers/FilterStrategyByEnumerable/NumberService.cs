@@ -12,29 +12,33 @@ namespace FilteringNumbers.FilterStrategyByEnumerable
         
         public static IEnumerable<int> ReadNumbersFromUser()
         {
-            List<int> numbers = new List<int>();  // برای افزودن اعداد
             ConsoleUserIO.Write(Messages.EnterNumbers);
             
             while (true)
             {
                 string input = ConsoleUserIO.Read();
-                if (input.ToLower() == "done") break;
+                if (input.ToLower() == "done") yield break;
 
                 if(int.TryParse(input,out int number))
-                    numbers.Add(number);
+                    yield return number;
+                    
                 else
                     ConsoleUserIO.Write(Messages.InvalidInput);
             }
-            return numbers;
         }
 
         // کلاس استاتیک برای فیلتر کردن اعداد
-        public static IEnumerable<int> FilterNumbers(IEnumerable<int> numbers, IFilter  filter)
+        public static IEnumerable<int> FilterNumbers(this IEnumerable<int> numbers, IFilter<int>  filter) 
         {
-          return  numbers.Where(n => filter.IsMatch(n)).ToList();
+            foreach (var n in numbers)
+            {
+                if (filter.IsMatch(n))
+                    yield return (int)n;
+            }
+         
         }
 
-       public static void PrintNumbers(IEnumerable<int> numbers)
+       public static void PrintNumbers(this IEnumerable<int> numbers)
         {
             ConsoleUserIO.Write("=== Printing numbers from Enumerable ===");
             ConsoleUserIO.Write(Messages.Result);

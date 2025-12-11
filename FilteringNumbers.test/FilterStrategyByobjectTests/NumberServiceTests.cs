@@ -37,7 +37,7 @@ namespace FilteringNumbers.tests.FilterStrategyByobjectTests
 
             //assert
             Assert.Equal(new List<object> { 3, 7 }, numbersList);
-            Assert.Contains(Messages.EnterNumbers, fakeIOList.outputs);
+            Assert.Contains(Messages.EnterItems, fakeIOList.outputs);
 
 
         }

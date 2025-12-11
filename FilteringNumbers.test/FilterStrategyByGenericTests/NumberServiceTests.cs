@@ -59,7 +59,7 @@ namespace FilteringNumbers.tests.FilterStrategyByGenericTests
 
             // Assert
             Assert.Equal(new List<int> { 3, 7 }, result);
-            Assert.Contains(Messages.EnterNumbers, fakeIO.outputs);
+            Assert.Contains(Messages.EnterItems, fakeIO.outputs);
         }
 
         [Fact]

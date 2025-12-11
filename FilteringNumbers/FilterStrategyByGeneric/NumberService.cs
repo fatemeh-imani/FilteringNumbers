@@ -13,7 +13,7 @@ namespace FilteringNumbers.FilterStrategyByGeneric
         public static List<T> ReadItemsFromUserList<T>(Func<string, (bool Success, T Value)> parser)
         {
             List<T> items = new List<T>();  // برای افزودن اعداد
-            ConsoleUserIO.Write(Messages.EnterNumbers);
+            ConsoleUserIO.Write(Messages.EnterItems);
 
             while (true)
             {
